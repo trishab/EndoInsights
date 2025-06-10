@@ -1,12 +1,37 @@
+import argparse
 import pandas as pd
 from Bio import Medline
 import matplotlib.pyplot as plt
+from config import FILE_PATHS
 
-# File paths to your data files
-genetic_mechanisms_endo_file = "/Users/trishablack/genetic_mechanisms_endometriosis_studies.txt"
-all_endometriosis_file = "/Users/trishablack/all_endometriosis_studies.txt"
-genetic_mechanisms_ipf_file = "/Users/trishablack/PycharmProjects/pythonProject/genetic_mechanisms_IPF_studies.txt"
-all_ipf_file = "/Users/trishablack/PycharmProjects/pythonProject/all_ipf_studies.txt"
+# Command line arguments override config defaults
+parser = argparse.ArgumentParser(description="Analyze IPF and endometriosis datasets")
+parser.add_argument(
+    "--genetic_mechanisms_endo_file",
+    default=FILE_PATHS["genetic_mechanisms_file"],
+    help="Path to genetic mechanisms endometriosis file",
+)
+parser.add_argument(
+    "--all_endometriosis_file",
+    default=FILE_PATHS["all_endometriosis_file"],
+    help="Path to all endometriosis studies file",
+)
+parser.add_argument(
+    "--genetic_mechanisms_ipf_file",
+    default=FILE_PATHS["genetic_mechanisms_ipf_file"],
+    help="Path to genetic mechanisms IPF file",
+)
+parser.add_argument(
+    "--all_ipf_file",
+    default=FILE_PATHS["all_ipf_file"],
+    help="Path to all IPF studies file",
+)
+args = parser.parse_args()
+
+genetic_mechanisms_endo_file = args.genetic_mechanisms_endo_file
+all_endometriosis_file = args.all_endometriosis_file
+genetic_mechanisms_ipf_file = args.genetic_mechanisms_ipf_file
+all_ipf_file = args.all_ipf_file
 
 def parse_medline_file(file_path):
     with open(file_path, 'r') as handle:

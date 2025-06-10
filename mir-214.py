@@ -1,7 +1,17 @@
 from collections import defaultdict
+import argparse
 import re
+from config import FILE_PATHS
 
-file_path = "/Users/trishablack/PycharmProjects/pythonProject/all_mir_214.txt"
+parser = argparse.ArgumentParser(description="Analyze mir-214 related diseases")
+parser.add_argument(
+    "--mir214_file",
+    default=FILE_PATHS["all_mir_214_file"],
+    help="Path to mir-214 records file",
+)
+args = parser.parse_args()
+
+file_path = args.mir214_file
 
 # Keywords for disease areas
 disease_keywords = ['cancer', 'ovarian', 'hepatoblastoma', 'pancreas', 'diabetes', 'bone', 'muscle', 'angiogenesis']
