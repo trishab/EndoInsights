@@ -1,17 +1,12 @@
 import pandas as pd
-from Bio import Medline
 import networkx as nx
 import matplotlib.pyplot as plt
+from utils import parse_medline_file
 
 # File paths to your data files
 genetic_mechanisms_file = "/Users/trishablack/genetic_mechanisms_endometriosis_studies.txt"
 all_endometriosis_file = "/Users/trishablack/all_endometriosis_studies.txt"
 
-def parse_medline_file(file_path):
-    with open(file_path, 'r') as handle:
-        records = Medline.parse(handle)
-        records = list(records)
-    return records
 
 def extract_gene_interactions(records):
     interactions = []
