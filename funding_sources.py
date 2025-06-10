@@ -1,6 +1,6 @@
 import pandas as pd
-from Bio import Medline
 import matplotlib.pyplot as plt
+from utils import parse_medline_file
 
 # File paths to your data files
 genetic_mechanisms_file = "/Users/trishablack/genetic_mechanisms_endometriosis_studies.txt"
@@ -23,11 +23,6 @@ funding_categories = {
     # Add more mappings as needed
 }
 
-def parse_medline_file(file_path):
-    with open(file_path, 'r') as handle:
-        records = Medline.parse(handle)
-        records = list(records)
-    return records
 
 def extract_funding_info(records):
     funding_data = []

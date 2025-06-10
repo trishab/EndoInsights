@@ -1,6 +1,12 @@
 import pandas as pd
-from Bio import Medline
 import matplotlib.pyplot as plt
+from utils import (
+    parse_medline_file,
+    extract_publication_details,
+    extract_publication_years,
+    count_publications_per_year,
+    add_labels,
+)
 
 # File paths to your data files
 genetic_mechanisms_endo_file = "/Users/trishablack/genetic_mechanisms_endometriosis_studies.txt"
@@ -8,39 +14,6 @@ all_endometriosis_file = "/Users/trishablack/all_endometriosis_studies.txt"
 genetic_mechanisms_ipf_file = "/Users/trishablack/genetic_mechanisms_IPF_studies.txt"
 all_ipf_file = "/Users/trishablack/all_ipf_studies.txt"
 
-def parse_medline_file(file_path):
-    with open(file_path, 'r') as handle:
-        records = Medline.parse(handle)
-        records = list(records)
-    return records
-
-def extract_publication_details(records):
-    details = []
-    for record in records:
-        title = record.get('TI', 'No title')
-        authors = ', '.join(record.get('AU', ['No authors']))
-        year = record.get('DP', 'No date').split(" ")[0]
-        details.append({'Title': title, 'Authors': authors, 'Year': year})
-    return details
-
-def extract_publication_years(details):
-    years = [detail['Year'] for detail in details]
-    return years
-
-def count_publications_per_year(years):
-    years = pd.Series(years)
-    years = pd.to_numeric(years, errors='coerce').dropna().astype(int)
-    years = years[years <= 2023]
-    year_range = range(years.min(), years.max() + 1)
-    year_counts = years.value_counts().reindex(year_range, fill_value=0).sort_index()
-    return year_counts
-
-def add_labels(ax, counts, label_interval=20, final_year=2023):
-    for year in range(counts.index.min(), final_year + 1, label_interval):
-        total = counts.loc[:year].sum()
-        ax.text(year, counts.loc[year], f'{total}', fontsize=10, ha='center', va='bottom')
-    final_total = counts.loc[:final_year].sum()
-    ax.text(final_year, counts.loc[final_year], f'{final_total}', fontsize=10, ha='center', va='bottom')
 
 # Parse the data
 genetic_endo_records = parse_medline_file(genetic_mechanisms_endo_file)
