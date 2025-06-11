@@ -65,3 +65,7 @@ python3 "ipf and endo analysis.py"
 
 Plots will appear in a window. Use other scripts similarly to explore funding sources or gene interactions.
 
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
