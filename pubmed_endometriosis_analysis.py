@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 from utils import (
     parse_medline_file,
     extract_publication_details,
@@ -8,11 +9,16 @@ from utils import (
     add_labels,
 )
 
-# File paths to your data files
-genetic_mechanisms_endo_file = "/Users/trishablack/genetic_mechanisms_endometriosis_studies.txt"
-all_endometriosis_file = "/Users/trishablack/all_endometriosis_studies.txt"
-genetic_mechanisms_ipf_file = "/Users/trishablack/genetic_mechanisms_IPF_studies.txt"
-all_ipf_file = "/Users/trishablack/all_ipf_studies.txt"
+
+def data_path(filename: str) -> Path:
+    """Return the path to a data file located next to this script."""
+    return Path(__file__).resolve().parent / filename
+
+# File paths to your data files (relative to this script)
+genetic_mechanisms_endo_file = data_path("genetic_mechanisms_endometriosis_studies.txt")
+all_endometriosis_file = data_path("all_endometriosis_studies.txt")
+genetic_mechanisms_ipf_file = data_path("genetic_mechanisms_ipf_studies.txt")
+all_ipf_file = data_path("all_IPF_studies.txt")
 
 
 # Parse the data

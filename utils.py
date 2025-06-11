@@ -1,10 +1,23 @@
 import pandas as pd
+from pathlib import Path
 from Bio import Medline
 
 
-def parse_medline_file(file_path: str):
-    """Return MEDLINE records from a text file."""
-    with open(file_path, "r") as handle:
+def parse_medline_file(file_path):
+    """Return MEDLINE records from a text file.
+
+    Parameters
+    ----------
+    file_path : str or Path
+        Location of the MEDLINE-formatted text file.
+    """
+    path = Path(file_path)
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"Data file not found: {path}. "
+            "Place the required MEDLINE file in this directory or update the path."
+        )
+    with path.open("r") as handle:
         return list(Medline.parse(handle))
 
 
