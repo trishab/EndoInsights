@@ -52,7 +52,7 @@ A related review article (doi:10.1155/2018/6217812) discusses how **microRNA‑2
 ```bash
 python3 -m venv endoenv
 source endoenv/bin/activate
-pip install pandas biopython matplotlib networkx
+pip install -r requirements.txt
 ```
 
 2. Place the MEDLINE text files in this directory (or adjust the paths in the scripts).
