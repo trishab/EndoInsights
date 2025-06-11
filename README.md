@@ -22,7 +22,7 @@ Each Python script analyzes the MEDLINE text files in different ways:
 | `gene_interactions.py` | Builds a gene interaction network from endometriosis MEDLINE data. |
 | `mir-214.py` | Groups PMIDs mentioning *mir‑214* by disease keywords. |
 | `mir_214.py` | Visualizes *mir‑214* interactions as a network. |
-| `ipf and endo analysis.py` | Compares publication counts over time for IPF and endometriosis. |
+| `ipf_endometriosis_analysis.py` | Compares publication counts over time for IPF and endometriosis. |
 | `pubmed_endometriosis_analysis.py` | Generates a publication timeline for both diseases. |
 | `pubmed_ipf_analysis` | Plots trends for endometriosis data only (despite the filename). |
 
@@ -60,7 +60,7 @@ pip install pandas biopython matplotlib networkx
 3. Run a script with Python:
 
 ```bash
-python3 "ipf and endo analysis.py"
+python3 "ipf_endometriosis_analysis.py"
 ```
 
 Plots will appear in a window. Use other scripts similarly to explore funding sources or gene interactions.
