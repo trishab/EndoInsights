@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from utils import (
@@ -9,9 +11,9 @@ from utils import (
 )
 
 def main():
-    # File paths to your data files
-    genetic_mechanisms_file = "/Users/trishablack/genetic_mechanisms_endometriosis_studies.txt"
-    all_endometriosis_file = "/Users/trishablack/all_endometriosis_studies.txt"
+    DATA_DIR = Path(__file__).parent / "data"
+    genetic_mechanisms_file = DATA_DIR / "genetic_mechanisms_endometriosis_studies.txt"
+    all_endometriosis_file = DATA_DIR / "all_endometriosis_studies.txt"
 
     # Parse the data
     genetic_records = parse_medline_file(genetic_mechanisms_file)

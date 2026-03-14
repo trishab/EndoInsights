@@ -1,14 +1,10 @@
 pandas
-<<<<<<< HEAD
 biopython
 matplotlib
 networkx
-=======
-matplotlib
-biopython
 nltk
 requests
 beautifulsoup4
 streamlit
 scikit-learn
->>>>>>> 623dcce (Update analysis script and fix file path issues)
+python-dotenv
