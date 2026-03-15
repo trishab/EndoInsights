@@ -2,7 +2,15 @@ endoenv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Ignore generated chart PNGs everywhere except the archive folder
 *.png
+!archive/**/*.png
+
+# Ignore large MEDLINE text files — use fetch_data.py to regenerate
+data/*.txt
+all_IPF_studies.txt
+genetic_mechanisms_ipf_studies.txt
 
 .idea/
 .DS_Store
