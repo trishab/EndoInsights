@@ -12,11 +12,11 @@ Search terms established: March 2026
   - ipf_all:      'idiopathic pulmonary fibrosis'
   - ipf_genetic:  'idiopathic pulmonary fibrosis AND (genes OR genetic)'
 
-Cumulative totals (1930–2024, as of March 2026 fetch):
-  - All Endometriosis Studies:        40,289
-  - Genetic Mechanisms Endometriosis:  6,127
-  - All IPF Studies:                  18,768
-  - Genetic Mechanisms IPF:            4,020
+Cumulative totals (1930–2026, as of March 2026 fetch):
+  - All Endometriosis Studies:        43,755
+  - Genetic Mechanisms Endometriosis:  6,815
+  - All IPF Studies:                  20,742
+  - Genetic Mechanisms IPF:            4,599
 """
 
 from pathlib import Path
@@ -43,7 +43,7 @@ def main():
 
     ax.set_xlabel("Year")
     ax.set_ylabel("Publications per Year")
-    ax.set_title("PubMed Articles Related to Endometriosis and IPF (1930–2024)")
+    ax.set_title("PubMed Articles Related to Endometriosis and IPF (1930–2026)")
     ax.legend()
     ax.grid(True, alpha=0.3)
     plt.xticks(rotation=45)

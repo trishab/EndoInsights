@@ -22,7 +22,7 @@ The comparison disease I chose was IPF — not arbitrarily, but because the two 
 
 | Script | What it does |
 |---|---|
-| `fetch_data.py` | Queries the PubMed E-utilities API and saves annual publication counts (1930–2024) to `data/publication_counts.csv` |
+| `fetch_data.py` | Queries the PubMed E-utilities API and saves annual publication counts (1930–2026) to `data/publication_counts.csv` |
 | `pubmed_endometriosis_analysis.py` | Plots per-year and cumulative publication trends for all four categories with annotated cumulative totals |
 | `ipf_endo_analysis.py` | Plots the IPF vs endometriosis research volume comparison |
 | `funding_sources.py` | Analyzes and plots funding source categories in endometriosis MEDLINE records |
@@ -69,19 +69,20 @@ This is not a story of IPF always having more genetic research. For most of the 
 | 2015 | 19.1% | 23.7% ← IPF pulls ahead |
 | 2020 | 21.1% | 23.7% |
 | 2024 | 20.3% | 29.1% |
+| 2025 | 20.9% | 30.4% |
 
-Endometriosis genetic research as a proportion of total endometriosis research has been roughly flat at ~20% since 2010. IPF has gone from 18% in 2010 to 29% in 2024 — and it is still climbing.
+Endometriosis genetic research as a proportion of total endometriosis research has been roughly flat at ~20% since 2010. IPF has gone from 18% in 2010 to 30% in 2025 — and it is still climbing.
 
-### Growth rates (CAGR 2000–2024)
+### Growth rates (CAGR 2000–2025)
 
-| Category | CAGR | 2000 | 2024 |
+| Category | CAGR | 2000 | 2025 |
 |---|---|---|---|
-| All Endometriosis Studies | 7.2% | 455/yr | 2,422/yr |
-| Genetic Mechanisms of Endometriosis | 10.1% | 49/yr | 492/yr |
-| All IPF Studies | 9.8% | 152/yr | 1,423/yr |
-| Genetic Mechanisms of IPF | **15.5%** | 13/yr | 414/yr |
+| All Endometriosis Studies | 7.4% | 455/yr | 2,742/yr |
+| Genetic Mechanisms of Endometriosis | 10.3% | 49/yr | 572/yr |
+| All IPF Studies | 9.8% | 152/yr | 1,576/yr |
+| Genetic Mechanisms of IPF | **15.5%** | 13/yr | 479/yr |
 
-IPF genetic mechanisms are growing at 15.5% CAGR — more than 5 percentage points faster than endometriosis genetic mechanisms (10.1%). At these rates, endometriosis genetic research will not reach IPF's current 29.1% proportion until approximately **2038**. By then, IPF's proportion will be higher still.
+IPF genetic mechanisms are growing at 15.5% CAGR — more than 5 percentage points faster than endometriosis genetic mechanisms (10.3%). At these rates, endometriosis genetic research will not reach IPF's current 30.4% proportion until approximately **2038**. By then, IPF's proportion will be higher still.
 
 ### What this means
 
@@ -183,7 +184,7 @@ NCBI_EMAIL=your_email_here
 **Step 4 — Fetch the data:**
 ```bash
 python3 fetch_data.py
-# Fetches 1930–2024 counts for all four queries — completes in under 2 minutes
+# Fetches 1930–2026 counts for all four queries — completes in under 2 minutes
 # Output: data/publication_counts.csv
 ```
 
@@ -194,7 +195,7 @@ python3 ipf_endo_analysis.py               # IPF vs endometriosis comparison
 ```
 
 **Step 6 — View results:**
-Each script opens an interactive matplotlib chart. The underlying data is in `data/publication_counts.csv` — 95 rows, one per year, with columns `year`, `endo_all`, `endo_genetic`, `ipf_all`, `ipf_genetic`. Open it in any spreadsheet application to explore further.
+Each script opens an interactive matplotlib chart. The underlying data is in `data/publication_counts.csv` — 97 rows, one per year, with columns `year`, `endo_all`, `endo_genetic`, `ipf_all`, `ipf_genetic`. Open it in any spreadsheet application to explore further.
 
 ---
 

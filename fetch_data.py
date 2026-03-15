@@ -19,17 +19,17 @@ both analysis scripts so future researchers can reproduce the data.
   ipf_all:      'idiopathic pulmonary fibrosis'
   ipf_genetic:  'idiopathic pulmonary fibrosis AND (genes OR genetic)'
 
-Baseline cumulative totals fetched March 2026 (1930–2024):
-  endo_all     = 40,289    endo_genetic = 6,127
-  ipf_all      = 18,768    ipf_genetic  = 4,020
+Baseline cumulative totals fetched March 2026 (1930–2026):
+  endo_all     = 43,755    endo_genetic = 6,815
+  ipf_all      = 20,742    ipf_genetic  = 4,599
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Credentials are loaded automatically from a .env file in the project root.
 Copy .env.example to .env and fill in your values — never commit .env.
 
 Usage:
-    python fetch_data.py                           # full range (1930–2024)
-    python fetch_data.py --start 2020 --end 2024   # test with a small range
+    python fetch_data.py                           # full range (1930–2026)
+    python fetch_data.py --start 2020 --end 2026   # test with a small range
     python fetch_data.py --email your@email.com --api-key <key>
 """
 
@@ -52,7 +52,7 @@ REQUEST_DELAY = 0.34        # ~3 req/s without API key
 REQUEST_DELAY_WITH_KEY = 0.11   # ~10 req/s with API key
 
 DEFAULT_START = 1930
-DEFAULT_END   = 2024
+DEFAULT_END   = 2026
 
 QUERIES = {
     "endo_all":     "endometriosis",

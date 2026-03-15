@@ -8,3 +8,4 @@ beautifulsoup4
 streamlit
 scikit-learn
 python-dotenv
+plotly
