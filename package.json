@@ -1,0 +1,44 @@
+{
+  "name": "endo-specialist-directory",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:e2e": "playwright test",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "drizzle-orm": "^0.30.0",
+    "postgres": "^3.4.0",
+    "drizzle-zod": "^0.5.0",
+    "zod": "^3.23.0",
+    "next-auth": "^4.24.0",
+    "bcryptjs": "^2.4.3",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "lucide-react": "^0.400.0",
+    "react-hook-form": "^7.52.0",
+    "@hookform/resolvers": "^3.6.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "jest": "^29.7.0",
+    "@testing-library/react": "^15.0.0",
+    "@testing-library/jest-dom": "^6.4.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "@types/bcryptjs": "^2.4.6"
+  }
+}
