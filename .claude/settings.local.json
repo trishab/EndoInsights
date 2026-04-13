@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "WebFetch(domain:endendo.io)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('message',{}\\).get\\('content',[{}]\\)[-1].get\\('type','?'\\), d.get\\('message',{}\\).get\\('stop_reason','?'\\)\\)\")"
+    ]
+  }
+}
