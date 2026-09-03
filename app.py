@@ -97,9 +97,13 @@ st.markdown(
     "*An independent replication and extension of Bouaziz et al. (2018) — "
     "analyzing 80+ years of PubMed publication data*"
 )
+# Headline gap, computed from the loaded dataset so it always reflects the
+# current publication_counts.csv rather than a hardcoded, stale figure.
+_endo_pct = 100 * df_full["endo_genetic"].sum() / df_full["endo_all"].sum()
+_ipf_pct = 100 * df_full["ipf_genetic"].sum() / df_full["ipf_all"].sum()
 st.warning(
-    "Only **2.8%** of endometriosis studies address genetic mechanisms — "
-    "compared to **7%** for IPF"
+    f"Only **{_endo_pct:.1f}%** of all endometriosis studies address genetic "
+    f"mechanisms — compared to **{_ipf_pct:.1f}%** for IPF"
 )
 
 st.markdown("---")
